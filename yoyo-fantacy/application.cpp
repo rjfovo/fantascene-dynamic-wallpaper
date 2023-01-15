@@ -80,8 +80,8 @@ const QString toMd5(const QByteArray &data)
 Application::Application(int &argc, char **argv)
     : QApplication(argc, argv)
 {
-    this->setApplicationName(tr("yoyo-fantacy"));
-    this->setApplicationDisplayName(tr("yoyo-fantacy"));
+    this->setApplicationName(tr("cutefish-fantacy"));
+    this->setApplicationDisplayName(tr("cutefish-fantacy"));
 
     this->setWindowIcon(QIcon(":/install/wallpaper.png"));
 
@@ -220,13 +220,13 @@ void Application::setDesktopTransparent()
 {
     //dbus开启壁纸透明
 //    system("qdbus --literal com.deepin.dde.desktop /com/deepin/dde/desktop com.deepin.dde.desktop.EnableBackground false");
-    QDBusInterface iface("com.yoyo.Settings",
+    QDBusInterface iface("com.cutefish.Settings",
                          "/Theme",
-                         "com.yoyo.Theme",
+                         "com.cutefish.Theme",
                          QDBusConnection::sessionBus());
     iface.asyncCall("setBackgroundVisible", false);
     //设置desktop透明
-    char str[13] = "yoyo-desktop";
+    char str[13] = "cutefish-desktop";
     int pid_t[128];
     find_pid_by_name1(str, pid_t);
     int pid = pid_t[0];
