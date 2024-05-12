@@ -226,7 +226,7 @@ void Application::setDesktopTransparent()
                          QDBusConnection::sessionBus());
     iface.asyncCall("setBackgroundVisible", false);
     //设置desktop透明
-    char str[13] = "cutefish-desktop";
+    char str[256] = "cutefish-desktop";
     int pid_t[128];
     find_pid_by_name1(str, pid_t);
     int pid = pid_t[0];
